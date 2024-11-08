@@ -43,7 +43,7 @@ const Faq = () => {
             <section>
                 <div className="mx-auto px-2 py-10 sm:px-6 lg:px-[150px]">
                     <div className="text-center">
-                        <p className="text-[46px] text-[#333333] font-bold " >Pricing Plan</p>
+                        <p className="text-[46px] text-[#333333] font-bold " >Faq</p>
                     </div>
                     <div className="space-y-4">
                         {faqData.map((faq, index) => (

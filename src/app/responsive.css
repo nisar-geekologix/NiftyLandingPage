@@ -1,0 +1,23 @@
+@media only screen and (max-width: 575px) {
+    .freetrielbtn{
+        color: white;
+        font-size: 12px;
+        padding: 8px 10px;
+        background:linear-gradient(90deg ,#537E95 0% , #004063 100%);
+        font-weight: 600;
+        border-radius: 8px;
+      }
+}
+
+
+/* Start tablet view responsive design */
+@media only screen and (min-width: 576px) and (max-width: 992px) {}
+
+
+
+/* macbook responsive */
+@media only screen and (min-width: 992px) and (max-width:1400px) {}
+
+
+/* Responsive for Apply 14' inch */
+@media only screen and (min-width: 1400px) and (max-width: 1500px) {}

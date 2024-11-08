@@ -1,5 +1,6 @@
 
 import "./globals.css";
+import "./responsive.css";
 import Header from '@/components/header';
 import Footer from '@/components/footer';
 

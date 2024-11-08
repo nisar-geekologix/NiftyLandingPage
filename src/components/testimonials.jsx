@@ -1,18 +1,25 @@
 'use client';
-import { useState , useEffect } from "react";
+import { useState, useEffect } from "react";
 import Marquee from "react-fast-marquee";
 import Image from 'next/image';
 
-
 const TestimonialCard = ({ testimonial }) => (
-    <div className="profile-card drop-shadow-md border p-4 bg-white rounded-lg">
-        <div className="flex items-center">
-            <div className="profile mr-4">
-                <Image src={testimonial.image} width={172} height={172} alt={testimonial.name} className='w-[100%]' />
+    <div className="profile-card drop-shadow-md border p-6 bg-white rounded-lg text-center lg:text-start max-w-[300px] sm:max-w-[400px] lg:max-w-[450px] mx-auto">
+        <div className="grid grid-cols-3 gap-4">
+            <div className="profile mb-4">
+                <Image
+                    src={testimonial.image}
+                    width={150}
+                    height={150}
+                    alt={testimonial.name}
+                    className="rounded-full border-2 border-white shadow-md"
+                />
             </div>
-            <div>
-                <p className="text-[24px] font-semibold text-[#333333]">{testimonial.name}</p>
-                <p className="font-normal text-[#333333]">
+            <div className="col-span-2">
+                <p className="text-[18px] font-semibold text-[#333333] mb-2">
+                    {testimonial.name}
+                </p>
+                <p className="font-normal text-[#333333] text-sm">
                     {testimonial.testimonial}
                 </p>
             </div>
@@ -20,9 +27,7 @@ const TestimonialCard = ({ testimonial }) => (
     </div>
 );
 
-
 const Testimonials = () => {
-
     const testimonialData = [
         {
             name: 'Bhavyaa Narotambhai',
@@ -92,57 +97,47 @@ const Testimonials = () => {
         }
     };
 
-    const getTestimonialGroups = () => {
-        if (screenWidth < 640) {
-            return testimonialData.slice(0, 2); // Show 2 testimonials on mobile
-        } else if (screenWidth < 1024) {
-            return testimonialData.slice(0, 4); // Show 4 testimonials on tablets
-        } else {
-            return testimonialData; // Show all testimonials on desktop
-        }
-    };
-
     return (
-        <>
-            <section>
-                <div className="mx-auto px-2 py-10 sm:px-6 lg:px-14">
-                    <div className="text-center">
-                        <p className="text-[46px] text-[#333333] font-bold " >Client Testimonials</p>
-                    </div>
-                    <div className="testimonialSlider1 gap-4 py-20 ">
-                    <Marquee
-                            speed={getMarqueeSpeed()}
-                            gradient={true}
-                            gradientColor={[255, 255, 255]}
-                            gradientWidth={100}
-                            pauseOnHover={true}
-                            className="mb-8"
-                        >
-                            {getTestimonialGroups().map((testimonial, index) => (
-                                <div key={index} className="mx-4 w-[300px] sm:w-[400px] lg:w-[500px]">
-                                    <TestimonialCard testimonial={testimonial} />
-                                </div>
-                            ))}
-                        </Marquee>
-                        <Marquee
-                            speed={getMarqueeSpeed()}
-                            gradient={true}
-                            gradientColor={[255, 255, 255]}
-                            gradientWidth={100}
-                            pauseOnHover={true}
-                            direction="right"
-                        >
-                            {getTestimonialGroups().map((testimonial, index) => (
-                                <div key={index} className="mx-4 w-[300px] sm:w-[400px] lg:w-[500px]">
-                                    <TestimonialCard testimonial={testimonial} />
-                                </div>
-                            ))}
-                        </Marquee>
-                    </div>
+        <section className="bg-gray-100 py-10">
+            <div className="mx-auto px-4 sm:px-6 lg:px-14">
+                <div className="text-center mb-8">
+                    <p className="text-[28px] sm:text-[36px] lg:text-[46px] text-[#333333] font-bold">
+                        Client Testimonials
+                    </p>
                 </div>
-            </section>
-        </>
-    )
-}
+                <div className="testimonialSlider gap-4">
+                    <Marquee
+                        speed={getMarqueeSpeed()}
+                        gradient={true}
+                        gradientColor={[255, 255, 255]}
+                        gradientWidth={100}
+                        pauseOnHover={true}
+                        className="mb-8"
+                    >
+                        {testimonialData.map((testimonial, index) => (
+                            <div key={index} className="mx-4">
+                                <TestimonialCard testimonial={testimonial} />
+                            </div>
+                        ))}
+                    </Marquee>
+                    <Marquee
+                        speed={getMarqueeSpeed()}
+                        gradient={true}
+                        gradientColor={[255, 255, 255]}
+                        gradientWidth={100}
+                        pauseOnHover={true}
+                        direction="right"
+                    >
+                        {testimonialData.map((testimonial, index) => (
+                            <div key={index} className="mx-4">
+                                <TestimonialCard testimonial={testimonial} />
+                            </div>
+                        ))}
+                    </Marquee>
+                </div>
+            </div>
+        </section>
+    );
+};
 
 export default Testimonials;
