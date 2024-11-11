@@ -18,7 +18,7 @@
 }
 
 body{
-  background-color: #F8FBFF;
+  background-color: #FFFFFF;
   font-family: "Poppins", sans-serif;
 }
 .insightSlider{
@@ -33,19 +33,7 @@ body{
   height: 100%;
   opacity: 27%;
 }
-.freetrielbtn{
-  color: white;
-  font-size: 24px;
-  padding: 20px 40px;
-  background:linear-gradient(90deg ,#537E95 0% , #004063 100%);
-  font-weight: 600;
-  border-radius: 8px;
-}
-.freetrielbtn:hover{
-  color: #004063;
-  border: 2px solid #004063;
-  background: transparent;
-}
+
 .mySwiper{
   overflow: visible !important;
 }
@@ -84,25 +72,12 @@ body{
   width: 172px !important;
 } */
 
-.PricePlan th{
-  text-align: center;
-  border: 1px solid gray;
-  padding: 28px;
-  gap: 28px;
-}
-.PricePlan td{
-  padding: 20px 32px;
-  border: 1px solid gray;
-}
-.insightSlider{
-  margin-top: 100px;
-}
-
-
+/* 
 .toolCard:hover p{
   color: #4399EB;
 }
 .toolCard:hover{
   background-color: #F8FBFF;
   box-shadow: 0px 0px 2px 2px #d1cfcf59;
-}
+} */
+

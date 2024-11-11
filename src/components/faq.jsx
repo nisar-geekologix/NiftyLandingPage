@@ -1,5 +1,9 @@
 'use client';
 import { useState } from "react";
+import Image from 'next/image';
+
+
+
 const Faq = () => {
     const [openIndex, setOpenIndex] = useState(null);
 
@@ -45,27 +49,18 @@ const Faq = () => {
                     <div className="text-center">
                         <p className="text-[46px] text-[#333333] font-bold " >Faq</p>
                     </div>
-                    <div className="space-y-4">
+                    <div className="space-y-4 mx-2 md:mx-5 lg:mx-32 ">
                         {faqData.map((faq, index) => (
-                            <div key={index} className="border-b border-gray-300">
+                            <div key={index} className="border-b border-[#333333] bg-white">
                                 <button
-                                    className="w-full flex justify-between items-center p-4 text-left"
+                                    className="w-full flex justify-between items-center p-3 text-left"
                                     onClick={() => toggleFAQ(index)}
                                 >
-                                    <span className="text-lg font-medium text-[#333333]">{faq.question}</span>
-                                    <svg
-                                        className={`w-6 h-6 transform transition-transform ${openIndex === index ? 'rotate-180' : ''
-                                            }`}
-                                        fill="none"
-                                        stroke="currentColor"
-                                        viewBox="0 0 24 24"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-                                    </svg>
+                                    <span className="py-2 md:py-4 lg:py-4 mt-2 md:mt-4 text-sm md:text-lg font-medium text-[#333333]">{faq.question}</span>
+                                    <Image className={`w-4 h-4 transform transition-transform ${openIndex === index ? 'rotate-180' : '' }`} src="/images/arrow-down.svg" width={9} height={15} alt="" />
                                 </button>
                                 {openIndex === index && (
-                                    <div className="p-4 text-gray-600 text-sm sm:text-base">{faq.answer}</div>
+                                    <div className=" text-sm md:text-lg sm:text-base px-3 pb-4 lg:pb-5 w-full font-medium text-[#999999]">{faq.answer}</div>
                                 )}
                             </div>
                         ))}
